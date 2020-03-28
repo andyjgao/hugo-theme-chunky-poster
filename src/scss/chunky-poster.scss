@@ -1,15 +1,36 @@
-.homepage-image {
-    @include media-breakpoint-up(lg) {
-        position: absolute;
-        width: 400px;
-        right: 100px;
-        top: 0;
-    }
-}
-
 .author .name a, .author .social a {
     color: $gray-900;
     text-decoration: none;
+}
+
+.border-prof{
+    box-shadow: black 1px 1px 6px 0px;
+    @include media-breakpoint-up(sm) {
+        width: 85%;
+        height: auto;
+    }
+}
+.border-grayy{
+    border-color:#e2e2e2 !important;
+    color: #d4d4d4 !important;
+}
+.intro-spacing{
+    @include media-breakpoint-up(sm) {
+        padding-left: ($spacer * .25) !important;
+        padding-top: ($spacer * 1.25) !important;
+
+    }
+    @include media-breakpoint-up(sm) {
+    }
+}
+
+.intro-spacing p{
+    font-size:19px;
+}
+
+.subheading-color{
+    font-size: 23px;
+    color:#9b9b9b;
 }
 
 blockquote {
