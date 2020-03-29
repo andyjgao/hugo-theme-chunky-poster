@@ -27,7 +27,9 @@
 
 .padding-fix{
     @include media-breakpoint-down(md) {
-       padding-left: 0 !important;
+        margin-top: 5rem !important;
+        margin-bottom: 5rem !important;
+
     }
 }
 .intro-spacing p{
