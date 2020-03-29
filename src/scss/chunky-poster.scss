@@ -18,12 +18,18 @@
     @include media-breakpoint-up(sm) {
         padding-left: ($spacer * .25) !important;
         padding-top: ($spacer * 1.25) !important;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-top: ($spacer * 1) !important;
+    }
 
-    }
-    @include media-breakpoint-up(sm) {
-    }
 }
 
+.padding-fix{
+    @include media-breakpoint-down(md) {
+       padding-left: 0 !important;
+    }
+}
 .intro-spacing p{
     font-size:19px;
 }

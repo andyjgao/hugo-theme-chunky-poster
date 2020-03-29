@@ -2,14 +2,14 @@
 <main class="homepage container my-8">
     <!-- Hero -->
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-5 padding-fix">
             {{- with .Site.Params.homepageImage -}}
                 <div class="homepage-image">
                     <img src="{{ . | relURL }}" class="img-fluid border-prof ">
                 </div>
             {{- end -}}
         </div>
-        <div class="col-lg-7 intro-spacing">
+        <div class="intro-spacing col-lg-7 ">
             <h1>{{.Params.title}}</h1>
             <h4 class="subheading-color">{{.Params.subheading}}</h4>
             {{ .Content }}
