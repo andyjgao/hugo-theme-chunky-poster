@@ -1,10 +1,15 @@
 {{- $related := .Site.RegularPages.Related . | first 3 -}}
 {{- with $related -}}
-    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3">
-        {{- range . -}}
-            <div class="col mb-3">
-                {{ .Render "card" }}
-            </div>
-        {{- end -}}
+<div>
+    <div class = "row-cols-lg3">
+        <h2>You may also like...</h2>
+        <div class="related-content row mt-5 row-cols-1 row-cols-lg-3 text">
+            {{- range . -}}
+                <div class="col mb-3">
+                    {{ .Render "card2" }}
+                </div>
+            {{- end -}}
+        </div>
     </div>
+</div>
 {{- end -}}

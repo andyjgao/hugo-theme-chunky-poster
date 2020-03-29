@@ -10,12 +10,12 @@
                                 {{- $image := .Resize "64x" -}}
                                 {{- $2ximage := .Resize "128x q100" -}}
                                 {{- $3ximage := .Resize "192x q100" -}}
-                                <a href="{{ $term.RelPermalink }}" class="mr-3">
-                                    <picture>
+                                <!-- <a href="{{ $term.RelPermalink }}" class="mr-3"> -->
+                                    <picture class="mr-3">
                                         <source srcset="{{ $image.RelPermalink }} 1x, {{ $2ximage.RelPermalink }} 2x, {{ $3ximage.RelPermalink }} 3x">
                                         <img src="{{ $image.RelPermalink }}" class="rounded-circle" alt="{{ $term.Params.name }}">
                                     </picture>
-                                </a>
+                                <!-- </a> -->
                             {{- end -}}
                         {{- end -}}
                         <div class="media-body">
@@ -24,7 +24,9 @@
                                 {{- if $term.Params.name -}}
                                     {{- .Scratch.Set "name" $term.Params.name -}}
                                 {{- end -}}
-                                <a href="{{ $term.RelPermalink }}" class="small">{{ .Scratch.Get "name" }}</a>
+                                <!-- <a href="{{ $term.RelPermalink }}" class="small"> -->
+                                    <span class="small">{{ .Scratch.Get "name" }}</span>
+                                <!-- </a> -->
                             </h5>
                             {{- with $term.Params.twitter -}}
                                 <p class="social small text-muted">
