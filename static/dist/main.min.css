@@ -9234,7 +9234,10 @@ a.text-dark:hover, a.text-dark:focus {
   text-decoration: none; }
 
 .smaller-text {
-  font-size: .75rem; }
+  font-size: .65rem; }
+  @media (min-width: 576px) {
+    .smaller-text {
+      font-size: .8rem; } }
   @media (min-width: 768px) {
     .smaller-text {
       font-size: 1rem; } }
