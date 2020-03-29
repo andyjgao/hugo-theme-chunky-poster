@@ -6,14 +6,14 @@
             <article>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="meta text-muted mb-3">
-                            <p class="created text-muted text-uppercase font-weight-bold mb-1">{{ $page.Date.Format "January 2, 2006" }}</p>
-                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>{{ T "wordCount" $page.WordCount }}</span>
-                            <span><i class="fas fa-clock mr-2"></i>{{ T "readingTime" $page.ReadingTime }}</span>
-                        </div>
+                    
 
                         <h1>{{ $page.Title }}</h1>
-
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase mb-1 mr-2">{{ $page.Date.Format "January 2, 2006" }}
+                            <span class="mr-2"><i class="fas fa-book-open ml-2 mr-2"></i>{{ T "wordCount" $page.WordCount }}</span>
+                            <span><i class="fas fa-clock mr-2"></i>{{ T "readingTime" $page.ReadingTime }}</span></p>
+                        </div>
                         {{ partial "authors.html" $page }}
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                         {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
                             {{- $image := .Fit "900x500" -}}
                             <div class="row justify-content-center mb-3">
-                                <div class="col-lg-10">
+                                <div class="col-lg-8">
                                     <img data-src="{{ $image.RelPermalink }}" class="img-fluid rounded mx-auto d-block" alt="{{ $page.Title }}">
                                 </div>
                             </div>
