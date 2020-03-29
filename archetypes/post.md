@@ -4,5 +4,4 @@ date: {{ .Date }}
 images: []
 categories: []
 tags: []
-authors: []
 ---
