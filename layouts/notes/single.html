@@ -23,7 +23,15 @@
                             <div class="col-9 pb-3">
                                 <h1 class="mb-3">{{ .Title }}</h1>
                                 <p><span class="bold-text rating-size">Rating:</span> <span class="rating-size">{{$page.Params.rating}}/5</span></p>
-                                <h5 class="bold-text"><a href="{{$page.Params.amazon | absURL}}"> Get it on Amazon</a></span></h5> 
+                                <h6 class="bold-text">Amazon:
+                                    <a href="{{$page.Params.amazon_paper | absURL}}">Read on paper</a>
+                                    {{ if $page.Params.amazon_kindle -}}
+                                        |<a href="{{$page.Params.amazon_kindle | absURL}}">Read on Kindle</a>
+                                    {{- end -}}
+                                    {{ if $page.Params.amazon_audio -}}
+                                        |<a href="{{$page.Params.amazon_audio | absURL}}">Listen to it</a>   
+                                    {{- end -}}
+                                </h6> 
                                 {{- with $page.Params.tags -}}
                                     <div class="tags my-3">
                                         {{- range . -}}
