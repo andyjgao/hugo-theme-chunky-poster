@@ -24,6 +24,15 @@
                                 <h1 class="mb-3">{{ .Title }}</h1>
                                 <p><span class="bold-text rating-size">Rating:</span> <span class="rating-size">{{$page.Params.rating}}/5</span></p>
                                 <h5 class="bold-text"><a href="{{$page.Params.amazon | absURL}}"> Get it on Amazon</a></span></h5> 
+                                {{- with $page.Params.tags -}}
+                                    <div class="tags my-3">
+                                        {{- range . -}}
+                                            <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                                                <i class="fas fa-tag mr-2"></i>{{ . }}
+                                            </a>
+                                        {{- end -}}
+                                    </div>
+                                {{- end -}}
                             </div>
                         </div>
                         <div class="content">
