@@ -11,6 +11,16 @@
     }
     
 }
+
+.title-font{
+    font-size: calc(1.29375rem + 0.125vw);
+}
+.bold-text{
+    font-weight: bold;
+}
+.rating-size{
+    font-size: x-large;
+}
 .border-prof{
     box-shadow: black 1px 1px 6px 0px;
     @include media-breakpoint-up(sm) {
