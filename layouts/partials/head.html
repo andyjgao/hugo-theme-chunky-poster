@@ -45,6 +45,9 @@
   <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}">
 {{- end -}}
 
+{{ "<!--Favicon-->" | safeHTML }}
+<link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
+<link rel="icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
 {{- template "_internal/opengraph.html" . -}}
 {{- template "_internal/google_news.html" . -}}
 {{- template "_internal/schema.html" . -}}
