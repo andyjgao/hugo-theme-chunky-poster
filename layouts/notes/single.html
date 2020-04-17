@@ -1,4 +1,7 @@
 {{ define "main" }}
+{{if eq .Params.hidden "true"}}
+    {{ .Render "hidden" }}
+{{else}}
 {{ $page := . }}
 <main class="content-page container pt-7 pb-5">
     <div class="row">
@@ -7,24 +10,14 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
                         <div class="row row-cols-1">
-                            <div class="col-md-3 pb-3 col-sm-12">
-                                {{- with $page.Params.images -}}
-                                    {{- $images := . -}}
-                                        {{- with $page.Site.GetPage "section" "images" -}}
-                                            {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
-                                                {{- $image := .Fit "1000x260" -}}
-                                                <a href="{{ $page.RelPermalink }}" class="d-block"></a>
-                                                    <img data-src="{{ $image.RelPermalink }}" class="rounded" alt="{{ $page.Title }}">
-                                                </a>
-                                        {{- end -}}
-                                    {{- end -}}
-                                {{- end -}}
-                            </div>
+                        
                             <div class="col-9 pb-3">
                                 <h1 class="mb-3">{{ .Title }}</h1>
                                 <p><span class="bold-text rating-size">Rating:</span> <span class="rating-size">{{$page.Params.rating}}/7</span></p>
                                 <h6 class="bold-text">Amazon:
+                                    {{ if $page.Params.amazon_paper -}}
                                     <a href="{{$page.Params.amazon_paper | absURL}}">Read on paper</a>
+                                    {{- end -}}
                                     {{ if $page.Params.amazon_kindle -}}
                                         |<a href="{{$page.Params.amazon_kindle | absURL}}">Read on Kindle</a>
                                     {{- end -}}
@@ -42,6 +35,19 @@
                                     </div>
                                 {{- end -}}
                             </div>
+                            <div class="col-md-3 pb-3 col-sm-12">
+                                {{- with $page.Params.images -}}
+                                    {{- $images := . -}}
+                                        {{- with $page.Site.GetPage "section" "images" -}}
+                                            {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
+                                                {{- $image := .Fit "1000x260" -}}
+                                                <a href="{{ $page.RelPermalink }}" class="d-block"></a>
+                                                    <img data-src="{{ $image.RelPermalink }}" class="rounded" alt="{{ $page.Title }}">
+                                                </a>
+                                        {{- end -}}
+                                    {{- end -}}
+                                {{- end -}}
+                            </div>
                         </div>
                         <div class="content">
                             
@@ -54,3 +60,4 @@
     </div>
 </main>
 {{ end }}
+{{end}}
