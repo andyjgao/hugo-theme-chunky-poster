@@ -14,7 +14,7 @@
             <h4 class="card-title">{{ $page.Title }}</h4>
             <p class="card-text text-muted text-uppercase">{{ $page.Date.Format "January 2, 2006" }}</p>
             {{- with $page.Params.tags -}}
-            <p class="card-text my-3">
+            <p class="card-text my-1">
             {{- range . -}}
                 <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
                     <i class="fas fa-tag mr-2"></i>{{ . }}
