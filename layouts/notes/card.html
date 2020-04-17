@@ -1,5 +1,5 @@
 {{ $page := . }}
-<div class="latest row py-lg-5">
+<div class="latest row py-2">
     <div class="col-md-2 mb-3 d-none d-md-block text-left">
         {{- with $page.Params.images -}}
             {{- $images := . -}}
@@ -13,7 +13,7 @@
             {{- end -}}
         {{- end -}}
     </div>
-    <div class="col-md-10 col-sm-12 col-10 mb-3">
+    <div class="col-md-10 col-12 mb-3">
         <span class="title-font"><a href="{{ $page.RelPermalink }}">{{ $page.Title }} by {{$page.Params.book_author}}</a> </span> <span class="bold-text">Rating:</span> {{$page.Params.rating}}/5
 
 
