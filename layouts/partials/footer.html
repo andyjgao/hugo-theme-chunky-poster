@@ -46,15 +46,15 @@
                             {{- end }}
                         </ul>
 
-                        <p class="text-muted">
+                        <p style="font-size: .9rem" class="text-muted">
                             {{ if .Site.Copyright }}
                                 {{ .Site.Copyright | safeHTML }}
                             {{ else }}
-                            | copyright &copy; {{ now.Year }} {{ .Site.Title }} All Rights Reserved |
+                           Copyright &copy; {{ now.Year }} {{ .Site.Title }} All Rights Reserved | <a class="text-muted" href="/privacy">Privacy Policy</a>
                             {{ end }}
                         </p>
                         <p>
-                            <a class="text-muted" href="/privacy">Privacy Policy</a>
+                            
                         </p>
                     </div>
                 </div>
