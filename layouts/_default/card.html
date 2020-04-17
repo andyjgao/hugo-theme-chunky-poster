@@ -1,6 +1,6 @@
 <div class="card h-100">
     {{ $page := . }}
-    <a href="{{ $page.RelPermalink }}" class="d-block">
+    <a style="text-decoration: none;" href="{{ $page.RelPermalink }}" class="d-block">
         {{- with $page.Params.images -}}
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "images" -}}
@@ -13,6 +13,15 @@
         <div class="card-body">
             <h4 class="card-title">{{ $page.Title }}</h4>
             <p class="card-text text-muted text-uppercase">{{ $page.Date.Format "January 2, 2006" }}</p>
+            {{- with $page.Params.tags -}}
+            <p class="card-text my-3">
+            {{- range . -}}
+                <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                    <i class="fas fa-tag mr-2"></i>{{ . }}
+                </a>
+            {{- end -}}
+            </p>
+            {{- end -}}
             <div class="card-text">
                 {{ $page.Params.description | plainify }}
             </div>
