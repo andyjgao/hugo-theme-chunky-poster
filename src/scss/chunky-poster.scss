@@ -2,6 +2,11 @@
     color: $gray-900;
     text-decoration: none;
 }
+
+.no-bullets input[type=checkbox]{
+    margin-right: .5rem;
+}
+
 .smaller-text{
     @include media-breakpoint-up(xs) {
         font-size: .75rem;

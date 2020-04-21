@@ -4,12 +4,20 @@
         <div class="col">
             <article>
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+              
+                        {{if eq .Params.todo "true"}}
+                        <div class="col-lg-8">
+                        <h2 class="mb-3 text-center">{{ .Title }}</h2>
+                        <div class="content no-bullets" >
+                            {{ .Content }}
+                        </div>
+                        {{else}}
+                    <div class="col-lg-8"></div>
                         <h2 class="mb-3">{{ .Title }}</h2>
-
                         <div class="content">
                             {{ .Content }}
                         </div>
+                        {{end}}
                     </div>
                 </div>
             </article>

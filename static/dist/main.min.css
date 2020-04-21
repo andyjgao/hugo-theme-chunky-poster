@@ -9233,6 +9233,9 @@ a.text-dark:hover, a.text-dark:focus {
   color: #082333;
   text-decoration: none; }
 
+.no-bullets input[type=checkbox] {
+  margin-right: .5rem; }
+
 .smaller-text {
   font-size: .75rem; }
   @media (min-width: 768px) {
