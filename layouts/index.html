@@ -9,10 +9,11 @@
                 </div>
             {{- end -}}
         </div>
-        <div class="intro-spacing col-lg-7 ">
+        <div class="col-lg-7 ">
             <h1>{{.Params.title}}</h1>
             <h4 class="subheading-color">{{.Params.subheading}}</h4>
             {{ .Content }}
+            <iframe src="https://mondaymail.substack.com/embed" class="w-100 test" frameborder="0" scrolling="no"></iframe>
         </div>
         <!-- <div class="col position-relative py-lg-7{{ if not .Site.Params.homepageImage }} py-7{{ else }} pb-5{{ end }}">
             <div class="col-lg-6">

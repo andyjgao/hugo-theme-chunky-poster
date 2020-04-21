@@ -9239,6 +9239,9 @@ a.text-dark:hover, a.text-dark:focus {
     .smaller-text {
       font-size: 1rem; } }
 
+.test a {
+  display: none; }
+
 .title-font {
   font-size: calc(1.29375rem + 0.125vw); }
 
@@ -9253,7 +9256,7 @@ a.text-dark:hover, a.text-dark:focus {
           box-shadow: black 1px 1px 6px 0px; }
   @media (min-width: 576px) {
     .border-prof {
-      width: 85%;
+      width: 90%;
       height: auto; } }
 
 .border-grayy {

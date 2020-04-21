@@ -11,6 +11,9 @@
     }
     
 }
+.test a{
+    display: none;
+}
 
 .title-font{
     font-size: calc(1.29375rem + 0.125vw);
@@ -24,7 +27,7 @@
 .border-prof{
     box-shadow: black 1px 1px 6px 0px;
     @include media-breakpoint-up(sm) {
-        width: 85%;
+        width: 90%;
         height: auto;
     }
 }
