@@ -9236,6 +9236,10 @@ a.text-dark:hover, a.text-dark:focus {
 .no-bullets input[type=checkbox] {
   margin-right: .5rem; }
 
+@media (max-width: 991.98px) {
+  .text-sm {
+    font-size: 1.1rem !important; } }
+
 .smaller-text {
   font-size: .75rem; }
   @media (min-width: 768px) {
@@ -9256,10 +9260,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 .border-prof {
   -webkit-box-shadow: black 1px 1px 6px 0px;
-          box-shadow: black 1px 1px 6px 0px; }
+          box-shadow: black 1px 1px 6px 0px;
+  width: 70%; }
   @media (min-width: 576px) {
     .border-prof {
-      width: 90%;
+      width: 40% !important;
       height: auto; } }
 
 .border-grayy {
