@@ -6,7 +6,12 @@
 .no-bullets input[type=checkbox]{
     margin-right: .5rem;
 }
-
+.img-modify img{
+    max-width: 100%;
+    height: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 .text-sm{
     @include media-breakpoint-down(md) {
         font-size: 1.1rem !important;   

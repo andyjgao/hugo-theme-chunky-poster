@@ -9236,6 +9236,12 @@ a.text-dark:hover, a.text-dark:focus {
 .no-bullets input[type=checkbox] {
   margin-right: .5rem; }
 
+.img-modify img {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
 @media (max-width: 991.98px) {
   .text-sm {
     font-size: 1.1rem !important; } }
