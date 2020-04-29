@@ -9229,12 +9229,13 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #adbcc4; } }
 
-.author .name a, .author .social a {
+.author .name a,
+.author .social a {
   color: #082333;
   text-decoration: none; }
 
-.no-bullets input[type=checkbox] {
-  margin-right: .5rem; }
+.no-bullets input[type="checkbox"] {
+  margin-right: 0.5rem; }
 
 .img-modify img {
   max-width: 100%;
@@ -9247,7 +9248,7 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 1.1rem !important; } }
 
 .smaller-text {
-  font-size: .75rem; }
+  font-size: 0.75rem; }
   @media (min-width: 768px) {
     .smaller-text {
       font-size: 1rem; } }
@@ -9306,15 +9307,16 @@ blockquote {
 code {
   background-color: #e9edf0;
   border-radius: 0.3rem;
-  padding: .125rem .2rem; }
+  padding: 0.125rem 0.2rem; }
 
-code[class*=language-], pre[class*=language-] {
+code[class*="language-"],
+pre[class*="language-"] {
   font-family: "Roboto Mono", monospace;
   font-size: 87.5%; }
 
-figure.highlight pre:not([class*=language-]) {
+figure.highlight pre:not([class*="language-"]) {
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   overflow: auto;
   background-color: #e9edf0; }
 
@@ -9322,7 +9324,10 @@ pre code {
   padding: 0;
   background-color: transparent; }
 
-.latest h2 a, .navbar a, .card > a, a.badge {
+.latest h2 a,
+.navbar a,
+.card > a,
+a.badge {
   text-decoration: none; }
 
 figure.highlight {
@@ -9356,6 +9361,60 @@ ul.share.nav .nav-link {
 
 footer a:not(.icons) {
   color: #adbcc4; }
+
+#fastSearch {
+  visibility: hidden;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: inline-block;
+  width: 100%;
+  height: 100%; }
+
+#fastSearch input {
+  padding: 4px 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 1.6em;
+  color: #aaa;
+  font-weight: bold;
+  background-color: #FFF;
+  border-radius: 3px 3px 0px 0px;
+  border: none;
+  outline: none;
+  text-align: left;
+  display: inline-block;
+  border-bottom: 1px solid #000; }
+
+#fastSearch ul {
+  padding: 0; }
+
+#searchResults li {
+  list-style: none;
+  margin-left: 0em;
+  background-color: #FFF;
+  border-bottom: 1px solid #000; }
+
+#searchResults li .title {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  display: inline-block; }
+
+#searchResults {
+  visibility: inherit;
+  display: inline-block;
+  width: 100%; }
+
+#searchResults a {
+  text-decoration: none !important;
+  padding: 10px;
+  display: inline-block; }
+
+#searchResults a:hover, #searchResults a:focus {
+  outline: 0;
+  background-color: #ebebeb;
+  width: 100%;
+  color: #000; }
 
 
 /*# sourceMappingURL=main.min.css.map*/

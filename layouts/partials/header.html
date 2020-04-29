@@ -25,8 +25,13 @@
 </nav> -->
 
 {{ $current := . }}
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" style="z-index:2" id="navbar-main-menu">
     <div class="container">
+        <div id="fastSearch">
+            <input id="searchInput" tabindex="200"  placeholder="Search...">
+            <ul id="searchResults" class="fix-ul-padding">
+            </ul>
+        </div>
         <a style="font-size: 1.5rem;" class="navbar-brand font-weight-bold" href="{{ .Site.BaseURL }}">Andy J. Gao</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
