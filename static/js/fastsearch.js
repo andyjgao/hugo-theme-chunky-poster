@@ -7,6 +7,21 @@ var last = list.lastChild; // last child of search list
 var maininput = document.getElementById("searchInput"); // input box for search
 var resultsAvailable = false; // Did we get any search results?
 
+
+
+document.addEventListener("click", () =>{
+    var outside = document.querySelector("main");
+    document.onclick = function(e){
+        if(e.target.id !=   document.getElementById("fastSearch")){
+            document.getElementById("fastSearch").style.visibility = "hidden";
+            searchVisible = false; // search not visible
+
+        }
+    }
+    }
+)
+
+
 // ==========================================
 // The main keyboard event listener running the show
 //
@@ -40,15 +55,7 @@ document.addEventListener("keydown", function (event) {
       searchVisible = false;
     }
   }
-
-  // allow outside click
-  if (hideOnClickOutside(document.getElementById("fastSearch"))) {
-    if (searchVisible) {
-      document.getElementById("fastSearch").style.visibility = "hidden";
-      document.activeElement.blur();
-      searchVisible = false;
-    }
-  }
+ 
   // DOWN (40) arrow
   if (event.keyCode == 40) {
     if (searchVisible && resultsAvailable) {
@@ -82,21 +89,6 @@ document.addEventListener("keydown", function (event) {
     }
   }
 });
-
-function hideOnClickOutside(element) {
-  const outsideClickListener = (event) => {
-    if (!element.contains(event.target) && isVisible(element)) {
-      return true;
-      removeClickListener();
-    }
-  };
-
-  const removeClickListener = () => {
-    document.removeEventListener("click", outsideClickListener);
-  };
-
-  document.addEventListener("click", outsideClickListener);
-}
 
 const isVisible = (elem) =>
   !!elem &&

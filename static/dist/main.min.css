@@ -9408,7 +9408,8 @@ footer a:not(.icons) {
 #searchResults a {
   text-decoration: none !important;
   padding: 10px;
-  display: inline-block; }
+  display: inline-block;
+  width: 100%; }
 
 #searchResults a:hover, #searchResults a:focus {
   outline: 0;
