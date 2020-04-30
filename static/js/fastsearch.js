@@ -7,20 +7,29 @@ var last = list.lastChild; // last child of search list
 var maininput = document.getElementById("searchInput"); // input box for search
 var resultsAvailable = false; // Did we get any search results?
 
+document.addEventListener("click", () => {
+  var outside = document.querySelector("main");
+  
+  document.onclick = function (e) {
+    if (e.target.id != document.getElementById("fastSearch")) {
+      document.getElementById("fastSearch").style.visibility = "hidden";
+      document.getElementById("searchIcon").style.visibility = "visible";
+      document.getElementById("fastSearch").style.position = "absolute";
+      document.getElementById("searchIcon").style.position = "inherit";
+      document.activeElement.blur(); // remove focus from search box
 
-
-document.addEventListener("click", () =>{
-    var outside = document.querySelector("main");
-    document.onclick = function(e){
-        if(e.target.id !=   document.getElementById("fastSearch")){
-            document.getElementById("fastSearch").style.visibility = "hidden";
-            searchVisible = false; // search not visible
-
-        }
+      searchVisible = false; // search not visible
     }
+    if (e.target.matches(".searchIcon")){
+      document.getElementById("fastSearch").style.visibility = "visible"; // show search box
+      document.getElementById("searchIcon").style.visibility = "hidden";
+      document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
+      document.getElementById("fastSearch").style.position = "relative";
+      document.getElementById("searchIcon").style.position = "absolute";
+      searchVisible = true; // search visible
     }
-)
-
+  };
+});
 
 // ==========================================
 // The main keyboard event listener running the show
@@ -38,11 +47,18 @@ document.addEventListener("keydown", function (event) {
     // Toggle visibility of search box
     if (!searchVisible) {
       document.getElementById("fastSearch").style.visibility = "visible"; // show search box
+      document.getElementById("searchIcon").style.visibility = "hidden";
       document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
+      document.getElementById("fastSearch").style.position = "relative";
+      document.getElementById("searchIcon").style.position = "absolute";
       searchVisible = true; // search visible
     } else {
       document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
+      document.getElementById("searchIcon").style.visibility = "visible";
       document.activeElement.blur(); // remove focus from search box
+      document.getElementById("fastSearch").style.position = "absolute";
+      document.getElementById("searchIcon").style.position = "inherit";
+
       searchVisible = false; // search not visible
     }
   }
@@ -55,11 +71,11 @@ document.addEventListener("keydown", function (event) {
       searchVisible = false;
     }
   }
- 
+
   // DOWN (40) arrow
   if (event.keyCode == 40) {
     if (searchVisible && resultsAvailable) {
-    //   console.log("down");
+      //   console.log("down");
       event.preventDefault(); // stop window from scrolling
       if (document.activeElement == maininput) {
         first.focus();
@@ -166,7 +182,7 @@ function executeSearch(term) {
         searchitems +
         '<li><a href="' +
         results[res].item.url +
-        '" tabindex="0" "style="width:100%">' +
+        '" tabindex="0"' +
         '<span class="title">' +
         results[res].item.title +
         "</a></li>";
