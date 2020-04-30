@@ -163,7 +163,9 @@ footer a:not(.icons) {
     // width:100%;
   }
 }
-
+svg {
+  pointer-events: none;
+}
 #fastSearch input {
   padding: 4px 10px;
   // width: 100%;

@@ -9369,6 +9369,9 @@ footer a:not(.icons) {
   top: 0px;
   display: inline-block; }
 
+svg {
+  pointer-events: none; }
+
 #fastSearch input {
   padding: 4px 10px;
   font-size: 1em;

@@ -7,29 +7,30 @@ var last = list.lastChild; // last child of search list
 var maininput = document.getElementById("searchInput"); // input box for search
 var resultsAvailable = false; // Did we get any search results?
 
-document.addEventListener("click", () => {
-  var outside = document.querySelector("main");
-  
-  document.onclick = function (e) {
-    if (e.target.id != document.getElementById("fastSearch")) {
-      document.getElementById("fastSearch").style.visibility = "hidden";
-      document.getElementById("searchIcon").style.visibility = "visible";
-      document.getElementById("fastSearch").style.position = "absolute";
-      document.getElementById("searchIcon").style.position = "inherit";
-      document.activeElement.blur(); // remove focus from search box
 
-      searchVisible = false; // search not visible
-    }
-    if (e.target.matches(".searchIcon")){
-      document.getElementById("fastSearch").style.visibility = "visible"; // show search box
-      document.getElementById("searchIcon").style.visibility = "hidden";
-      document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
-      document.getElementById("fastSearch").style.position = "relative";
-      document.getElementById("searchIcon").style.position = "absolute";
-      searchVisible = true; // search visible
-    }
-  };
-});
+document.addEventListener('click', function(e){   
+  if (firstRun) {
+    loadSearch(); // loads our json data and builds fuse.js search index
+    firstRun = false; // let's never do this again
+  }
+  if (document.getElementById('searchIcon') === e.target){
+    document.getElementById("fastSearch").style.visibility = "visible"; // show search box
+    document.getElementById("searchIcon").style.visibility = "hidden";
+    document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
+    document.getElementById("fastSearch").style.position = "relative";
+    document.getElementById("searchIcon").style.position = "absolute";
+    searchVisible = true; // search visible
+  } else{
+      if (e.target.id != document.getElementById("fastSearch")) {
+        document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
+        document.getElementById("searchIcon").style.visibility = "visible";
+        document.activeElement.blur(); // remove focus from search box
+        document.getElementById("fastSearch").style.position = "absolute";
+        document.getElementById("searchIcon").style.position = "inherit";
+        searchVisible = false; // search not visible
+
+  }
+}});
 
 // ==========================================
 // The main keyboard event listener running the show
@@ -66,9 +67,13 @@ document.addEventListener("keydown", function (event) {
   // Allow ESC (27) to close search box
   if (event.keyCode == 27) {
     if (searchVisible) {
-      document.getElementById("fastSearch").style.visibility = "hidden";
-      document.activeElement.blur();
-      searchVisible = false;
+      document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
+      document.getElementById("searchIcon").style.visibility = "visible";
+      document.activeElement.blur(); // remove focus from search box
+      document.getElementById("fastSearch").style.position = "absolute";
+      document.getElementById("searchIcon").style.position = "inherit";
+
+      searchVisible = false; // search not visible
     }
   }
 
@@ -106,14 +111,16 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-const isVisible = (elem) =>
+const isVisible = (elem) =>{
+  console.log(elem)
   !!elem &&
   !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length); // source (2018-03-11): https://github.com/jquery/jquery/blob/master/src/css/hiddenVisibleSelectors.js
-// ==========================================
+}
+  // ==========================================
 // execute search as each character is typed
 //
 document.getElementById("searchInput").onkeyup = function (e) {
-  executeSearch(this.value);
+  executeSearch(e.target.value);
 };
 
 // ==========================================
