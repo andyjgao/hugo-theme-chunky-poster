@@ -9372,16 +9372,18 @@ footer a:not(.icons) {
 svg {
   pointer-events: none; }
 
-#fastSearch input {
+#fastSearch input[type=text] {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
   padding: 4px 10px;
   font-size: 1em;
   color: #aaa;
   background-color: #FFF;
-  border-radius: 3px 3px 0px 0px;
   outline: none;
   text-align: left;
   display: inline-block;
-  border: 2px solid #f0f0f0; }
+  border-bottom: 1px solid #f0f0f0; }
 
 #fastSearch ul {
   padding: 0;
@@ -9392,7 +9394,7 @@ svg {
   font-weight: bold;
   margin-left: 0em;
   background-color: #FFF;
-  border: 2px solid #f0f0f0; }
+  border: 1px solid #f0f0f0; }
 
 #searchResults li .title {
   font-size: 1.1em;

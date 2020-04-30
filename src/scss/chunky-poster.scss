@@ -158,27 +158,31 @@ footer a:not(.icons) {
   right: 0px;
   top: 0px;
   display: inline-block;
-  transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
-  // width: 100%;
-  @include media-breakpoint-down(sm) {
-    // width:100%;
-  }
 }
+
+
 svg {
   pointer-events: none;
 }
-#fastSearch input {
+#fastSearch input[type=text] {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
   padding: 4px 10px;
   // width: 100%;
   font-size: 1em;
   color: #aaa;
   background-color: #FFF;
-  border-radius: 3px 3px 0px 0px;
+  // border-radius: 3px 3px 0px 0px;
   outline: none;
   text-align: left;
   display: inline-block;
-  border: 2px solid #f0f0f0 ;
+  border-bottom: 1px solid #f0f0f0 ;
 }
+
+// #fastSearch input[type=text]{
+//   width: 13px;
+// }
 
 #fastSearch ul{
     padding: 0;
@@ -191,7 +195,7 @@ svg {
   font-weight: bold;
   margin-left: 0em;
   background-color: #FFF;
-  border: 2px solid #f0f0f0 ;
+  border: 1px solid #f0f0f0 ;
 }
 #searchResults li .title {
   font-size: 1.1em;
