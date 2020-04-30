@@ -9376,7 +9376,7 @@ svg {
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
-  padding: 4px 10px;
+  padding: 4px 1px;
   font-size: 1em;
   color: #aaa;
   background-color: #FFF;
@@ -9387,7 +9387,8 @@ svg {
 
 #fastSearch ul {
   padding: 0;
-  position: absolute; }
+  position: absolute;
+  width: 100%; }
 
 #searchResults li {
   list-style: none;

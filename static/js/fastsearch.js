@@ -49,9 +49,9 @@ document.addEventListener("keydown", function (event) {
     if (!searchVisible) {
       document.getElementById("fastSearch").style.visibility = "visible"; // show search box
       document.getElementById("searchIcon").style.visibility = "hidden";
-      document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
       document.getElementById("fastSearch").style.position = "relative";
       document.getElementById("searchIcon").style.position = "absolute";
+      document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
       searchVisible = true; // search visible
     } else {
       document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
@@ -153,7 +153,7 @@ function loadSearch() {
       distance: 100,
       threshold: 0.4,
       minMatchCharLength: 2,
-      keys: ["title", "content"],
+      keys: ["title", "content","tags"],
     };
     fuse = new Fuse(data, options); // build the index from the json file
     // console.log(fuse);

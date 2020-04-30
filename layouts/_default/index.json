@@ -17,6 +17,7 @@
     {
     "url": "{{ .Permalink }}",
     "title": "{{ .Title }}",
+    "tags": "{{.Params.tags}}",
     "content": "{{- range $words -}}
     {{- $word := (.) -}}
     {{- if and (not (in ($scratch.Get "seenwords") $word)) (ne (substr $word 0 1) $word) (not (in $stopwords $word)) -}}
