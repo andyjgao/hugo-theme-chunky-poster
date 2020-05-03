@@ -1,6 +1,6 @@
 {{ $stopwords := (slice "again" "and" "in" "is" "no" "or" "this" "well" "yes") }}
 [
-{{ $pages := (where .Site.RegularPages ".Params.noindex" "ne" true) }}
+{{ $pages := (where .Site.RegularPages ".Params.noindex" "ne" "true") }}
 {{ $lastindex := (sub (len $pages) 1) }}
 {{ range $index, $page := $pages }}
     {{ $scratch := newScratch }}
