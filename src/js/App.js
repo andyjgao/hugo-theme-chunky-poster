@@ -14,6 +14,7 @@ import {
     faSearch
 } from '@fortawesome/free-solid-svg-icons';
 import {
+    faLink,
     faFacebook,
     faFacebookF,
     faGithub,
@@ -33,6 +34,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
+    faLink,
     faSearch,
     faBookOpen,
     faChevronLeft,
