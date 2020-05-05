@@ -11,10 +11,10 @@ import {
     faEnvelope,
     faRss,
     faTag,
-    faSearch
+    faSearch,
+    faLink
 } from '@fortawesome/free-solid-svg-icons';
 import {
-    faLink,
     faFacebook,
     faFacebookF,
     faGithub,

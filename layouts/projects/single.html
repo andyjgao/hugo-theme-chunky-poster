@@ -16,8 +16,8 @@
                                 <img src="/images/andy-gao_small.png" class="rounded-circle" alt="image of andy">
                             </picture>
                             <a href="https://twitter.com/@andyjgao">andyjgao</a> / <span class="created text-muted text-uppercase mb-1 mr-10">{{ $page.Date.Format "January 2, 2006" }}</span>
-                            <span class="mr-2"><i class="fab fa-github ml-2 mr-1"></i>View Code</span>
-                            <span><i class="fas fa-link ml-2 mr-1"></i>{{ T "readingTime" $page.ReadingTime }}</span></p>
+                            <a href={{.Params.github}}><span class="mr-1"><i class="fab fa-github ml-1 mr-1"></i>View Code</span></a>
+                            <a href={{.Params.link}}><span><i class="fas fa-link ml-1 mr-1"></i>{{ .Params.view }}</span></a></p>
                         </div>
                         <!-- {{ partial "authors.html" $page }} -->
                     </div>
