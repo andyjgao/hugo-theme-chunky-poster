@@ -10,17 +10,18 @@
                 {{ . }}
             </div>
             {{- end -}}
-        
-            {{ range where .Pages "Params.hidden" "ne" "true"}}
-                <div class="mb-3">
-                    {{ .Render "card" }}
-                </div>
+
+            {{range sort (where (where .Data.Pages "Section" "bookshelf") "Params.hidden" "ne" "true") "Params.rating" "desc"}}
+            <div class="mb-3">
+                {{ .Render "card" }}
+            </div>
+
             {{ end }}
         </div>
         {{- end -}}
     </div>
-        
-        
+
+
 
 </main>
 {{ end }}
