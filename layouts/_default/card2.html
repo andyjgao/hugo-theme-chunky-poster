@@ -1,3 +1,25 @@
+<!-- <div class="col-12">
+    <div class="card h-100">
+        {{ $page := . }}
+        <a href="{{ $page.RelPermalink }}" class="d-block"> -->
+            <!-- {{- with $page.Params.images -}}
+            {{- $images := . -}}
+            {{- with $page.Site.GetPage "section" "images" -}}
+            {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
+            {{- $image := .Resize "400x200" -}}
+            <img data-src="{{ $image.RelPermalink }}" class="card-img-top mx-auto d-block" alt="{{ $page.Title }}">
+            {{- end -}}
+            {{- end -}}
+            {{- end -}} -->
+            <!-- <div class="card-body">
+                <h4 class="card-title">{{ $page.Title }}</h4>
+                <span class="mr-2"><i class="fas fa-book-open mr-2"></i>{{ T "wordCount" $page.WordCount }}</span>
+                <span><i class="fas fa-clock mr-2"></i>{{ T "readingTime" $page.ReadingTime }}</span>
+            </div>
+        </a>
+    </div>
+</div> -->
+
 <div class="card h-100">
     {{ $page := . }}
     <a style="text-decoration: none;" href="{{ $page.RelPermalink }}" class="d-block">
@@ -12,17 +34,17 @@
         {{- end -}}
         <div class="card-body">
             <h4 class="card-title">{{ $page.Title }}</h4>
-            <!-- <p class="card-text text-muted text-uppercase">{{ $page.Date.Format "January 2, 2006" }}</p> -->
-            <!--{{- with $page.Params.tags -}}
+            <!-- <p class="card-text text-muted text-uppercase">{{ $page.Date.Format "January 2, 2006" }}</p>
+            {{- with $page.Params.tags -}}
             <p class="card-text my-1">
             {{- range . -}}
                 <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
                     <i class="fas fa-tag mr-2"></i>{{ . }}
                 </a>
-            {{- end -}} -->
-            <!-- </p>
-            {{- end -}} -->
-            <!-- <div class="card-text">
+            {{- end -}}
+            </p>
+            {{- end -}}
+            <div class="card-text">
                 {{ $page.Params.description | plainify }}
             </div> -->
         </div>
