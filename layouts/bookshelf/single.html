@@ -3,7 +3,7 @@
     {{ .Render "hidden" }}
 {{else}}
 {{ $page := . }}
-<main class="content-page container pt-7 pb-5">
+<main class="content-page container pt-7 pb-1">
     <div class="row">
         <div class="col">
             <article>
@@ -53,7 +53,19 @@
                             
                             {{ .Content }}
                         </div>
+                        {{- with $page.Params.tags -}}
+                        <div class="tags my-3">
+                            {{- range . -}}
+                            <a class="badge badge-pill badge-light border mr-2"
+                                href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                                <i class="fas fa-tag mr-2"></i>{{ . }}
+                            </a>
+                            {{- end -}}
+                        </div>
+                        {{- end -}}
                         <div class="sharethis-inline-share-buttons"></div>
+                        {{ partial "related.html" $page }}
+                        {{ partial "mail_footer.html"}}
 
                     </div>
                 </div>

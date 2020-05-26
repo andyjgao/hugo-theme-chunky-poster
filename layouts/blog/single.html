@@ -1,40 +1,45 @@
 {{ define "main" }}
-<main class="content-page container pt-7 pb-5">
+<main class="content-page container pt-7 pb-1">
     {{ $page := . }}
     <div class="row">
         <div class="col">
             <article>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                    
+
 
                         <h1>{{ $page.Title }}</h1>
                         <div class="meta text-muted mb-3 smaller-text">
                             <p>
-                            <picture>
-                                <source srcset="{{`/images/andy-gao_small.png`}} 1x, {{`/images/andy-gao_small.png`}} 2x, {{`/images/andy-gao_small.png`}} 3x">
-                                <img src="/images/andy-gao_small.png" class="rounded-circle" alt="image of andy">
-                            </picture>
-                            <a href="https://twitter.com/andyjgao">andyjgao</a> / <span class="created text-muted text-uppercase mb-1 mr-10">{{ $page.Date.Format "January 2, 2006" }}</span>
-                            <span class="mr-2"><i class="fas fa-book-open ml-2 mr-1"></i>{{ T "wordCount" $page.WordCount }}</span>
-                            <span><i class="fas fa-clock mr-1"></i>{{ T "readingTime" $page.ReadingTime }}</span></p>
+                                <picture>
+                                    <source
+                                        srcset="{{`/images/andy-gao_small.png`}} 1x, {{`/images/andy-gao_small.png`}} 2x, {{`/images/andy-gao_small.png`}} 3x">
+                                    <img src="/images/andy-gao_small.png" class="rounded-circle" alt="image of andy">
+                                </picture>
+                                <a href="https://twitter.com/andyjgao">andyjgao</a> / <span
+                                    class="created text-muted text-uppercase mb-1 mr-10">{{ $page.Date.Format "January 2, 2006" }}</span>
+                                <span class="mr-2"><i
+                                        class="fas fa-book-open ml-2 mr-1"></i>{{ T "wordCount" $page.WordCount }}</span>
+                                <span><i class="fas fa-clock mr-1"></i>{{ T "readingTime" $page.ReadingTime }}</span>
+                            </p>
                         </div>
                         <!-- {{ partial "authors.html" $page }} -->
                     </div>
                 </div>
 
                 {{- with $page.Params.images -}}
-                    {{- $images := . -}}
-                    {{- with $page.Site.GetPage "section" "images" -}}
-                        {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
-                            {{- $image := .Fit "900x500" -}}
-                            <div class="row justify-content-center mb-3">
-                                <div class="col-lg-8">
-                                    <img data-src="{{ $image.RelPermalink }}" class="img-fluid rounded mx-auto d-block" alt="{{ $page.Title }}">
-                                </div>
-                            </div>
-                        {{- end -}}
-                    {{- end -}}
+                {{- $images := . -}}
+                {{- with $page.Site.GetPage "section" "images" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
+                {{- $image := .Fit "900x500" -}}
+                <div class="row justify-content-center mb-3">
+                    <div class="col-lg-8">
+                        <img data-src="{{ $image.RelPermalink }}" class="img-fluid rounded mx-auto d-block"
+                            alt="{{ $page.Title }}">
+                    </div>
+                </div>
+                {{- end -}}
+                {{- end -}}
                 {{- end -}}
 
                 <div class="row justify-content-center">
@@ -44,19 +49,20 @@
                         </div>
 
                         {{- with $page.Params.tags -}}
-                            <div class="tags my-3">
+                        <div class="tags my-3">
                             {{- range . -}}
-                                <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-                                    <i class="fas fa-tag mr-2"></i>{{ . }}
-                                </a>
+                            <a class="badge badge-pill badge-light border mr-2"
+                                href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                                <i class="fas fa-tag mr-2"></i>{{ . }}
+                            </a>
                             {{- end -}}
-                            </div>
+                        </div>
                         {{- end -}}
 
                         {{ partial "sharer.html" . }}
                         <div class="sharethis-inline-share-buttons"></div>
                         {{ partial "related.html" $page }}
-
+                        {{ partial "mail_footer.html"}}
                     </div>
                 </div>
 

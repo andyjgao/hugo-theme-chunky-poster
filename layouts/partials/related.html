@@ -1,15 +1,26 @@
-{{- $related := shuffle (.Site.RegularPages.RelatedIndices .) | first 3 -}}
+<!-- {{- $related := shuffle (.Site.RegularPages.RelatedIndices .) | first 3 -}}
 {{- with $related -}}
-<div class="mt-3">
+<div class="mt-4">
     <div class = "row-cols-lg1">
-        <h2>You may also like...</h2>
+        <h4>You may also like...</h4>
         <div class="related-content row mt-3 row-cols-1 row-cols-lg-1 text">
             {{- range . -}}
                 <div class="mb-3">
-                    {{ .Render "card2" }}
+                    {{ .Render "card" }}
                 </div>
             {{- end -}}
         </div>
     </div>
+</div>
+{{- end -}} -->
+{{- $related := .Site.RegularPages.Related . | first 3 -}}
+{{- with $related -}}
+<h4 class="mt-4">You may also like...</h4>
+<div class="related-content row mt-1 row-cols-1 row-cols-lg-3">
+    {{- range . -}}
+    <div class="col mb-3">
+        {{ .Render "card2" }}
+    </div>
+    {{- end -}}
 </div>
 {{- end -}}
