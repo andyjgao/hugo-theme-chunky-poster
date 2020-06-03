@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main class="homepage container mt-sm-4 mb-4 padding-fix" style="z-index:0">
+<main class="homepage container mt-4 mb-4" style="z-index:0">
     <!-- Hero -->
     <div class="row justify-content-center">
         <!-- <div class="col-lg-5">
@@ -17,7 +17,7 @@
             {{- end -}}
             <h1 class="text-center">{{.Params.title}}</h1>
             <h4 class="subheading-color text-sm text-center">{{.Params.subheading}}</h4>
-            <div class="content">{{ .Content }}</div>
+            {{ .Content }}
             <iframe src="https://mondaymail.substack.com/embed" style="margin-top:-1.5rem;" class="h-1 w-100"
                 frameborder="0" scrolling="no"></iframe>
         </div>
