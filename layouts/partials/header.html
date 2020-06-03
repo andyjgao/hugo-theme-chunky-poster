@@ -25,9 +25,9 @@
 </nav> -->
 
 {{ $current := . }}
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+<nav class="navbar navbar-expand-md navbar-light sticky-top transparent" id="navbar-main-menu">
     <div class="container " style=" padding-left: 0px; padding-right: 0px;">
-        <a style="font-size: 1.5rem;" class="navbar-brand font-weight-bold" href="{{ .Site.BaseURL }}">Andy J. Gao</a>
+        <a style="font-size: 1.5rem;" class="navbar-brand font-weight-bold fixNavA" href="{{ .Site.BaseURL }}">Andy J. Gao</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
             aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,3 +56,5 @@
     </div>
 
 </nav>
+<div class="shadow-nav"></div>
+<div class="cover"></div>

@@ -3,6 +3,29 @@
   color: $gray-900;
   text-decoration: none;
 }
+.cover {
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 3px;
+}
+.transparent {
+  background-color: rgba(255, 255, 255, 0.97);
+}
+.shadow-nav {
+  position: sticky;
+  width: 100%;
+  top: 66px;
+  height: 1px;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.25);
+}
+.bookshelf {
+  margin-left: -5px;
+}
+.img-modify,
+.content p {
+  font-family: "PT Serif", serif;
+}
 
 .no-bullets input[type="checkbox"] {
   margin-right: 0.5rem;
@@ -27,6 +50,11 @@
     font-size: 1rem;
   }
 }
+.fixNavA {
+  @include media-breakpoint-up(sm) {
+    margin-left: 1.1rem !important;
+  }
+}
 .test a {
   display: none;
 }
@@ -44,7 +72,7 @@
   box-shadow: black 1px 1px 6px 0px;
   width: 70%;
   @include media-breakpoint-up(sm) {
-    width: 40% !important;
+    width: 60% !important;
     height: auto;
   }
 }
@@ -160,11 +188,10 @@ footer a:not(.icons) {
   display: inline-block;
 }
 
-
 svg {
   pointer-events: none;
 }
-#fastSearch input[type=text] {
+#fastSearch input[type="text"] {
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
@@ -172,22 +199,22 @@ svg {
   // width: 100%;
   font-size: 1em;
   color: #aaa;
-  background-color: #FFF;
+  background-color: #fff;
   // border-radius: 3px 3px 0px 0px;
   outline: none;
   text-align: left;
   display: inline-block;
-  border-bottom: 1px solid #f0f0f0 ;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 // #fastSearch input[type=text]{
 //   width: 13px;
 // }
 
-#fastSearch ul{
-    padding: 0;
-    position: absolute;
-    width: 100%;
+#fastSearch ul {
+  padding: 0;
+  position: absolute;
+  width: 100%;
 }
 
 #searchResults li {
@@ -195,8 +222,8 @@ svg {
   list-style: none;
   font-weight: bold;
   margin-left: 0em;
-  background-color: #FFF;
-  border: 1px solid #f0f0f0 ;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
 }
 #searchResults li .title {
   font-size: 1.1em;
@@ -213,12 +240,13 @@ svg {
   text-decoration: none !important;
   padding: 10px;
   display: inline-block;
-  width:100%;
+  width: 100%;
 }
 
-#searchResults a:hover,#searchResults a:focus {
+#searchResults a:hover,
+#searchResults a:focus {
   outline: 0;
   background-color: #ebebeb;
-  width:100%;
+  width: 100%;
   color: #000;
 }
