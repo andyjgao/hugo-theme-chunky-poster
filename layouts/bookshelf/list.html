@@ -3,7 +3,7 @@
     {{- if or .Title .Content -}}
     <div class="row py-3 justify-content-center">
         <div class="col-lg-8">
-            {{ with .Title }}<h3 class="display-4">{{ . }}</h3>{{ end }}
+            {{ with .Title }}<h3 class="display-4 bookshelf">{{ . }}</h3>{{ end }}
 
             {{- with .Content -}}
             <div class="content pb-3">
