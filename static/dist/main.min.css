@@ -9255,8 +9255,9 @@ a.text-dark:hover, a.text-dark:focus {
 .bookshelf {
   margin-left: -5px; }
 
-.img-modify, .content p {
-  font-family: 'PT Serif', serif; }
+.img-modify,
+.content p {
+  font-family: "PT Serif", serif; }
 
 .no-bullets input[type="checkbox"] {
   margin-right: 0.5rem; }
@@ -9277,6 +9278,10 @@ a.text-dark:hover, a.text-dark:focus {
     .smaller-text {
       font-size: 1rem; } }
 
+@media (min-width: 576px) {
+  .fixNavA {
+    margin-left: 1.1rem !important; } }
+
 .test a {
   display: none; }
 
@@ -9295,7 +9300,7 @@ a.text-dark:hover, a.text-dark:focus {
   width: 70%; }
   @media (min-width: 576px) {
     .border-prof {
-      width: 40% !important;
+      width: 60% !important;
       height: auto; } }
 
 .border-grayy {
@@ -9396,14 +9401,14 @@ footer a:not(.icons) {
 svg {
   pointer-events: none; }
 
-#fastSearch input[type=text] {
+#fastSearch input[type="text"] {
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
   padding: 4px 1px;
   font-size: 1em;
   color: #aaa;
-  background-color: #FFF;
+  background-color: #fff;
   outline: none;
   text-align: left;
   display: inline-block;
@@ -9418,7 +9423,7 @@ svg {
   list-style: none;
   font-weight: bold;
   margin-left: 0em;
-  background-color: #FFF;
+  background-color: #fff;
   border: 1px solid #f0f0f0; }
 
 #searchResults li .title {
@@ -9434,7 +9439,8 @@ svg {
   display: inline-block;
   width: 100%; }
 
-#searchResults a:hover, #searchResults a:focus {
+#searchResults a:hover,
+#searchResults a:focus {
   outline: 0;
   background-color: #ebebeb;
   width: 100%;
