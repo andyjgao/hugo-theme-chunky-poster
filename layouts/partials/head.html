@@ -7,7 +7,8 @@
   {{ .Site.Title }}
   {{ end }}
 </title>
-
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+  rel="stylesheet">
 <!-- Share This Code -->
 {{ if ne "true" .Params.home}}
 <script type='text/javascript'
@@ -31,14 +32,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css">
 {{ end }}
 {{ end }}
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-  rel="stylesheet">
+
 {{ with index .Site.Data "chunky-poster" }}
 {{ range $vendor := .assets }}
 {{ if $vendor.css }}
 <link rel="stylesheet" href="{{ print "dist/" $vendor.css | relURL }}">
 {{ end }}
 {{ end }}
+
 {{ end }}
 
 {{ range .Site.Params.customCSS -}}
