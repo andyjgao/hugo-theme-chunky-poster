@@ -1,5 +1,6 @@
 {{ $page := . }}
 <div class="latest row ">
+     <a href="{{ $page.RelPermalink }}">
     <div class="col-md-3 mb-3 d-none d-md-block text-left">
         {{- with $page.Params.images -}}
         {{- $images := . -}}
@@ -14,7 +15,7 @@
         {{- end -}}
     </div>
     <div class="col-md-9 col-12 mb-3 essay-margin-top">
-        <span class="essay-title bold-text "><a class="text-decoration-none"
+        <span class="essay-title bold-text "><a class=""
                 href="{{ $page.RelPermalink }}">{{ $page.Title }}</a> </span> <br />
 
 
@@ -31,5 +32,5 @@
             {{- end -}}
         </span> -->
         {{- end -}}
-    </div>
+    </div></a>
 </div>

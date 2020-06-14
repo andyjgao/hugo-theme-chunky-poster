@@ -10,10 +10,17 @@
                 {{ . }}
             </div>
             {{- end -}}
-            {{ range .Pages }}
+            {{range where .Pages "Params.first" "ne" "true"}}
 
             <div class="mb-3 essay-border">
-                <a href="">{{ .Render "card" }}</a>
+                {{ .Render "card" }}
+            </div>
+
+            {{ end }}
+            {{range where .Pages "Params.first" "==" "true"}}
+
+            <div class="mb-3">
+                {{ .Render "card" }}
             </div>
 
             {{ end }}

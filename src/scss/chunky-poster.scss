@@ -83,7 +83,7 @@
   box-shadow: black 1px 1px 6px 0px;
   width: 70%;
   @include media-breakpoint-up(sm) {
-    width: 60% !important;
+    width: 50% !important;
     height: auto;
   }
 }

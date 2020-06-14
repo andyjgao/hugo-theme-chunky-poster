@@ -9311,7 +9311,7 @@ a.text-dark:hover, a.text-dark:focus {
   width: 70%; }
   @media (min-width: 576px) {
     .border-prof {
-      width: 60% !important;
+      width: 50% !important;
       height: auto; } }
 
 .border-grayy {
