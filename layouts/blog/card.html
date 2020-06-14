@@ -1,0 +1,35 @@
+{{ $page := . }}
+<div class="latest row ">
+    <div class="col-md-3 mb-3 d-none d-md-block text-left">
+        {{- with $page.Params.images -}}
+        {{- $images := . -}}
+        {{- with $page.Site.GetPage "section" "images" -}}
+        {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
+        {{- $image := .Resize "1000x" -}}
+        <a href="{{ $page.RelPermalink }}" class="d-block">
+            <img data-src="{{ $image.RelPermalink }}" class="img-fluid" alt="{{ $page.Title }}">
+        </a>
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+    </div>
+    <div class="col-md-9 col-12 mb-3 essay-margin-top">
+        <span class="essay-title bold-text "><a class="text-decoration-none"
+                href="{{ $page.RelPermalink }}">{{ $page.Title }}</a> </span> <br />
+
+
+        <div class="content" style="font-family: PT serif;">
+            {{ $page.Params.description | truncate 210 }}
+        </div>
+        <!-- <span class="text-muted">{{ $page.Date.Format "January 2, 2006" }}</span> -->
+        {{- with $page.Params.tags -}}
+        <!-- <span>
+            {{- range . -}}
+            <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                <i class="fas fa-tag mr-2"></i>{{ . }}
+            </a>
+            {{- end -}}
+        </span> -->
+        {{- end -}}
+    </div>
+</div>

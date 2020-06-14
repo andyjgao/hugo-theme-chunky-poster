@@ -9234,6 +9234,9 @@ a.text-dark:hover, a.text-dark:focus {
   color: #082333;
   text-decoration: none; }
 
+.essay-border {
+  border-bottom: 1px solid #eee; }
+
 .cover {
   position: absolute;
   background: white;
@@ -9289,6 +9292,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .title-font {
   font-size: calc(1.29375rem + 0.125vw); }
+
+.essay-margin-top {
+  margin-top: -0.1rem; }
+
+.essay-title {
+  font-size: calc(1.4rem + 0.125vw); }
 
 .bold-text {
   font-weight: bold; }

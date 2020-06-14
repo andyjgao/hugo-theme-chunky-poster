@@ -3,6 +3,9 @@
   color: $gray-900;
   text-decoration: none;
 }
+.essay-border {
+  border-bottom: 1px solid #eee;
+}
 .cover {
   position: absolute;
   background: white;
@@ -19,7 +22,7 @@
   top: 66px;
   height: 1px;
   box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.25);
-  z-index: 1
+  z-index: 1;
 }
 .bookshelf {
   margin-left: -5px;
@@ -63,6 +66,12 @@
 
 .title-font {
   font-size: calc(1.29375rem + 0.125vw);
+}
+.essay-margin-top {
+  margin-top: -0.1rem;
+}
+.essay-title {
+  font-size: calc(1.4rem + 0.125vw);
 }
 .bold-text {
   font-weight: bold;
